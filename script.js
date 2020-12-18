@@ -1,6 +1,8 @@
-let n= 50;
+const n= 50;
 
-let y= 45;
+let bushelYield = null;
+
+let finalYield = null;
 
 var rain = window.prompt("How many inches of rain fell")
 
@@ -8,7 +10,6 @@ var answer = window.prompt("Did you use fertilizer?")
 if (answer=="yes") {
 var answer2 =  window.prompt("Did you use premium or regular fertilizer?");
 }
-
 var str = ("*");
 
 let x=rain;
@@ -19,26 +20,27 @@ asteriskArr.push("*");
 }
 console.log(asteriskArr.join(""))
 
-let b = ("The yield should be 40 bushels per acre.");
-
 if (rain>= 20){
-     n*=0.9;  
+    bushelYield = n * 0.9;  
 }     
-let c = ("The yield should be 49.5 bushels per acre")             
-let a = ("The yield should be 51.795 bushels per acre.")
-if  (answer2== "regular"){
-      y*=1.1;
-      {console.log(c)}      
+else if (rain < 10){
+    bushelYield = n * 0.8;
 }
-if (answer2 == "premium"){
-      y*=1.151;
-      {console.log(a)}
- 
+else {
+    n==50;
+}
+
+if  (answer2== "regular"){
+      finalYield = bushelYield * 1.1;
+           
+}
+else if (answer2 == "premium"){
+     finalYield = bushelYield * 1.15;    
 } 
-else if (rain<10) 
-{ 
-     n*=0.8;
-     console.log(b);
-} 
+else 
+{
+    finalYield= bushelYield;
+}
+console.log("The final yield should be " +  finalYield  +  " bushels per acre");
 
 
